@@ -1,6 +1,6 @@
 {
   "name": "metric-prefix",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Stringify big.js numbers using only few significant digits and a metric prefix",
   "main": "index.js",
   "scripts": {
