@@ -1,18 +1,18 @@
 const test = require('tape')
 const metric = require('../')
-const U = 'Hz' // some example unit
+const unit = 'Hz' // some example unit
 
 test('floor', t => {
   t.equal(metric(7), '7.00', 'no conversion')
-  t.equal(metric(12, U, 2), '12 Hz', 'no conversion')
+  t.equal(metric(12, {unit}), '12.0 Hz', 'custom unit')
   t.equal(metric(999), '999', 'no conversion')
-  t.equal(metric(1001, U, 4), '1.001 kHz', 'kilo converstion')
-  t.equal(metric(1009), '1.00 k', 'kilo converstion')
+  t.equal(metric(1001, {precision: 4}), '1.001 k', 'custom precision')
+  t.equal(metric(1009, {delimiter: ''}), '1.00k', 'custom delimiter')
   t.equal(metric(12345), '12.3 k', 'kilo converstion')
-  t.equal(metric(999999), '999 k', 'mega converstion')
+  t.equal(metric(999999), '999 k', 'floor result')
   t.equal(metric(1e6), '1.00 M', 'mega converstion')
-  t.equal(metric(1e6 + 9, U, 7), '1.000009 MHz', 'mega converstion')
-  t.equal(metric(1e6 + 9, U, 6), '1.00000 MHz', 'mega converstion')
+  t.equal(metric(1e6 + 9, {unit, precision: 7}), '1.000009 MHz', 'mega converstion')
+  t.equal(metric(1e6 + 9, {unit, precision: 6}), '1.00000 MHz', 'mega converstion')
   t.equal(metric(1.1e9), '1.10 G', 'giga converstion')
   t.equal(metric(10.9e9), '10.9 G', 'giga converstion')
   t.equal(metric(100e15), '100 P', 'peta converstion')

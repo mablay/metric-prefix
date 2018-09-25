@@ -3,18 +3,18 @@ const Big = require('big.js')
 const prefixes = ['', ...'kMGTPEZYXWV'.split('')]
 
 /**
- * Stringify a (big) number
- * using only a few digits
- * and a metric prefix.
- * @param {number|Big} number to be stringified
- * @param {number} [precision = 3] of significant digits
- * @param {boolean} [floor = true] or round insignificant digits
+ * Format a number using an SI prefix and only significant digits.
+ * @param  {number|Big} number      to be formated
+ * @param  {String} [unit='']       E.g.: 'Hz', 'Watt', 'V'
+ * @param  {Number} [precision=3]   significant digits
+ * @param  {String} [delimiter=' '] between number and prefix
+ * @return {String}                 formatted number
  */
-function metric (number, unit = '', precision = 3, floor = true, delimiter = ' ') {
+function metric (number, { unit = '', precision = 3, delimiter = ' ' } = {}) {
   const N = (number instanceof Big) ? number : new Big(number)
   const prefix = prefixes[Math.floor(N.e / 3)]
   N.e = N.e % 3
-  if (floor) N.c = N.c.slice(0, precision)
+  N.c = N.c.slice(0, precision)
   const dl = (prefix === '' && unit === '') ? '' : delimiter
   return `${N.toPrecision(precision)}${dl}${prefix}${unit}`
 }
