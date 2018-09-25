@@ -1,12 +1,19 @@
 {
-  "name": "metric-prefix",
-  "version": "1.0.0",
-  "description": "",
+  "name": "big-metric-prefix",
+  "version": "0.1.0",
+  "description": "Stringify big.js numbers using only few significant digits and a metric prefix",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape test/spec.js | tap-spec"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {
+    "big.js": "^5.1.2"
+  }
 }
