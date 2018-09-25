@@ -1,13 +1,27 @@
 {
-  "name": "big-metric-prefix",
-  "version": "0.1.0",
+  "name": "metric-prefix",
+  "version": "0.2.0",
   "description": "Stringify big.js numbers using only few significant digits and a metric prefix",
   "main": "index.js",
   "scripts": {
     "test": "tape test/spec.js | tap-spec"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "metric",
+    "prefix",
+    "unit",
+    "kilo",
+    "mega",
+    "giga",
+    "terra",
+    "significant",
+    "number",
+    "big",
+    "big.js",
+    "digits",
+    "decimals"
+  ],
+  "author": "Marc Ablay",
   "license": "ISC",
   "devDependencies": {
     "tap-spec": "^5.0.0",

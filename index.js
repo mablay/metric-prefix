@@ -1,21 +1,22 @@
 const Big = require('big.js')
 
-const prefixes = ['', ...'kMGTPEZY'.split('')]
+const prefixes = ['', ...'kMGTPEZYXWV'.split('')]
 
 /**
  * Stringify a (big) number
  * using only a few digits
  * and a metric prefix.
- * @param: number {number|Big} to be stringified
- * @param: precision {number} significant digits
- * @param: round {boolean} floor or round insignificant digits
+ * @param {number|Big} number to be stringified
+ * @param {number} [precision = 3] of significant digits
+ * @param {boolean} [floor = true] or round insignificant digits
  */
-function metric (number, precision = 3, round = false) {
-  const N = new Big(number)
+function metric (number, unit = '', precision = 3, floor = true, delimiter = ' ') {
+  const N = (number instanceof Big) ? number : new Big(number)
   const prefix = prefixes[Math.floor(N.e / 3)]
   N.e = N.e % 3
-  if (!round) N.c = N.c.slice(0, precision)
-  return N.toPrecision(precision).concat(prefix)
+  if (floor) N.c = N.c.slice(0, precision)
+  const dl = (prefix === '' && unit === '') ? '' : delimiter
+  return `${N.toPrecision(precision)}${dl}${prefix}${unit}`
 }
 
 module.exports = metric
