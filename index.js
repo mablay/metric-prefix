@@ -20,7 +20,7 @@ function prefix (number, {
 
 const prefixFactory = (defaults) =>
   (number, options) =>
-    prefix(number, {...defaults, ...options})
+    prefix(number, { ...defaults, ...options })
 
 prefixFactory.prefix = prefix
 
