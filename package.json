@@ -4,7 +4,7 @@
   "description": "Stringify big.js numbers using only few significant digits and a metric prefix",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/spec.js | tap-spec"
+    "test": "pta"
   },
   "keywords": [
     "metric",
@@ -26,11 +26,10 @@
   ],
   "author": "Marc Ablay",
   "license": "ISC",
-  "devDependencies": {
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
-  },
   "dependencies": {
     "big.js": "^5.1.2"
+  },
+  "devDependencies": {
+    "pta": "^0.1.3"
   }
 }
