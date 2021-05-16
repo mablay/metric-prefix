@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "pta",
-    "build": "npx webpack-cli --mode production --entry ./doc/script.js -t web -o doc/",
-    "watch": "npx webpack-cli --mode development --entry ./doc/script.js -t web -o doc/ --watch"
+    "build": "npx webpack-cli --mode production --entry ./docs/script.js -t web -o docs/",
+    "watch": "npx webpack-cli --mode development --entry ./docs/script.js -t web -o docs/ --watch"
   },
   "keywords": [
     "metric",
