@@ -34,7 +34,7 @@ function updateHero () {
   if (options.precision !== 3) strOpts.push(`  precision: ${options.precision}`)
   if (options.delimiter !== ' ') strOpts.push(`  delimiter: '${options.delimiter}'`)
   if (strOpts.length) str += '\n' + strOpts.join(',\n') + '\n'
-  str += `})\nconsole.log(prefix(${val}))`
+  str += `})\nconsole.log(prefix(${number.value}))`
   code.innerHTML = str
 }
 
