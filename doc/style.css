@@ -1,0 +1,143 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  background: rgb(50,20,86);
+  background: linear-gradient(33deg, rgba(2,  0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  height: 100vh;
+  width: 100vw;
+  min-width: 320;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-container {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+#hero {
+  text-align: center;
+  font-size: 64px;
+}
+
+.form {
+  overflow-x: hidden;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.field {
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.form > .field {
+  display: inline-block;
+  width: 300px;
+}
+
+.field > label {
+  color: #BBB;
+  text-align: right;
+  display: inline-block;
+  width: 120px;
+}
+
+.form > .field > input {
+  width: 50px;
+}
+
+.field > input {
+  color: white;
+  text-align: center;
+  line-height: 32px;
+  font-size: 32px;
+  vertical-align: bottom;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid grey;
+  background-color: transparent;
+}
+
+.field > input:focus {
+  outline-width: 0;
+  /* outline-style:none; */
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid white;
+}
+
+input#number {
+  text-align: right;
+  width: 80%;
+}
+
+/* remove number arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input#unit {
+  text-align: left;
+  width: 158px;
+}
+
+.code-container {
+  padding-left: 50%;
+  overflow-x: hidden;
+  /* width: 300px; */
+  height: 200px;
+  display: inline-block;
+}
+
+pre {
+  margin: 0;
+  margin-left: -200px;
+  padding: 0;
+  margin-top: 26px;
+  font-size: 16px;
+  white-space: pre-wrap;
+  color: #BBB;
+}
+
+.invisible {
+  display: none;
+}
+
+@media screen and (max-height: 720px) {
+  .code-container {
+    display: none;
+  }
+}
+
+.reveal {
+  animation: reveal 3s linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes reveal {
+  0% { opacity: 0; }
+  75% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media screen and (max-width: 720px) {
+  input#number {
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+  }
+}

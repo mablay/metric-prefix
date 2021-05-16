@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metric Prefix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero-container">
+    <div id="hero"></div>
+  </div>
+
+  <div class="field">
+    <label for="unit">Number</label>
+    <input id="number" type="number" value="">
+  </div>
+
+  
+  <div class="form reveal">
+    <div class="field">
+      <label for="unit">unit</label>
+      <input id="unit" name="unit" type="text" maxlength="5" value="Hz">
+    </div>
+  
+    <div class="field">
+      <label for="delimiter">delimiter</label>
+      <input id="delimiter" name="delimiter" type="text" maxlength="2" value=" ">
+    </div>
+  
+    <div class="field">
+      <label for="precision">precision</label>
+      <input id="precision" name="precision" type="number" min="3" max="9" value="4">
+    </div>
+  </div>
+
+  <div class="code-container reveal">
+    <pre id="code"></pre>
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+</html>

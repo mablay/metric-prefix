@@ -4,7 +4,9 @@
   "description": "Stringify big.js numbers using only few significant digits and a metric prefix",
   "main": "index.js",
   "scripts": {
-    "test": "pta"
+    "test": "pta",
+    "build": "npx webpack-cli --mode production --entry ./doc/script.js -t web -o doc/",
+    "watch": "npx webpack-cli --mode development --entry ./doc/script.js -t web -o doc/ --watch"
   },
   "keywords": [
     "metric",
