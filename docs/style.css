@@ -145,3 +145,20 @@ pre {
     text-align: center;
   }
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 4px;
+}
+
+.footer a {
+  color: #0BB;
+  font-size: 12px;
+}
+
+.footer a:visited {
+  color: #0AA;
+}
