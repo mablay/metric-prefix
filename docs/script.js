@@ -50,3 +50,11 @@ window.onload = function () {
     i--
   }, 100)
 }
+
+// allow scrolling page refresh via pull down for android devices
+const ua = navigator.userAgent.toLowerCase()
+if (~ua.indexOf("android")) {
+  for (const el of document.getElementsByClassName('noyscroll')) {
+    el.classList.remove('noyscroll')
+  }
+}

@@ -12,6 +12,10 @@ html, body {
   overflow-x: hidden;
 }
 
+.noyscroll {
+  overflow-y: hidden;
+}
+
 .hero-container {
   padding-top: 10vh;
   padding-bottom: 10vh;
